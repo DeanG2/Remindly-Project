@@ -3,7 +3,7 @@ const LocalStrategy = require("passport-local").Strategy;
 const userController = require("../controllers/userController");
 const localLogin = new LocalStrategy(
   {
-    usernameField: "email",
+    usernameField: "email",  //this block is uneccesary if uising username and password
     passwordField: "password",
   },
   (email, password, done) => {
@@ -16,7 +16,7 @@ const localLogin = new LocalStrategy(
   }
 );
 
-passport.serializeUser(function (user, done) {
+passport.serializeUser(function (user, done) {  //creates req.user which contains all of the login user's info
   done(null, user.id);
 });
 

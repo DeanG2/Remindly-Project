@@ -15,7 +15,7 @@ router.post(
 );
 
 router.get("/logout", (req, res) => {
-  req.logout();
+  req.logout();  //destroys the serialized user
   res.redirect("/auth/login");
 });
 
